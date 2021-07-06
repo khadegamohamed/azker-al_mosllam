@@ -1,6 +1,6 @@
 package com.example.azkeral_moslam;
 
-public class imageazker extends AzkarModel{
+public class imageazker {
     int  image ;
     String name;
 

@@ -20,7 +20,7 @@ public class AzkarListAdapter extends RecyclerView.Adapter<AzkarListAdapter.Azka
     @NonNull
     @Override
     public AzkarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new AzkarViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.azker_text, null, false));
+        return new AzkarViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.itemofadepter, null, false));
     }
 
     @Override

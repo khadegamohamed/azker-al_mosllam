@@ -1,21 +1,36 @@
 package com.example.azkeral_moslam;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
 public class sleep extends AppCompatActivity {
     RecyclerView rvv;
+    Button sleeptimer;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sleep);
         rvv = findViewById(R.id.sleep);
+        sleeptimer = findViewById(R.id.sleeptimer);
+        sleeptimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sleeptimer = new Intent(sleep.this,sleeptimer.class);
+                startActivity(sleeptimer);
+            }
+        });
         ArrayList<imageazker> listimage = new ArrayList<>();
         ArrayList<String> listazker = new ArrayList<>();
         listimage.add(new imageazker(R.drawable.almolk, "قراءه سوره الملك "));

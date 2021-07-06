@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.azkeral_moslam">
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AzkerAL_Moslam">
-        <activity android:name=".pray"></activity>
+        <activity android:name=".sleeptimer"></activity>
+        <activity android:name=".pray" />
         <activity android:name=".sleep" />
         <activity android:name=".night" />
         <activity android:name=".Morning" />
@@ -23,14 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".Moringandnight">
-        </receiver>
-        <receiver android:name=".azkerreciver">
-        </receiver>
-        <receiver android:name=".notifactionreciver">
-        </receiver>
-        <receiver android:name=".reciveractivtay">
-        </receiver>
+
+        <receiver android:name=".AzkerMorningandnight"></receiver>
+        <receiver android:name=".sleepnotification"></receiver>
+        <receiver android:name=".AzanNotification"></receiver>
+        <receiver android:name=".ApiRequest"></receiver>
     </application>
 
 </manifest>
