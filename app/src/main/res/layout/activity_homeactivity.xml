@@ -6,7 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".homeactivity">
-
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="api"
+    android:id="@+id/buttonapi"
+    />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"

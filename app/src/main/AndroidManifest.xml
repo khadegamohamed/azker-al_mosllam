@@ -31,6 +31,7 @@
         <receiver android:name=".sleepnotification"></receiver>
         <receiver android:name=".AzanNotification"></receiver>
         <receiver android:name=".ApiRequest"></receiver>
+        <receiver android:name=".fakecalnder"></receiver>
     </application>
 
 </manifest>
