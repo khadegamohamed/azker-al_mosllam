@@ -26,22 +26,14 @@ private final int Splash_Display_Length=1000;
      },Splash_Display_Length);
 
         Calendar caland= Calendar.getInstance();
-        caland.set(Calendar.HOUR_OF_DAY,24);
-        caland.set(Calendar.MINUTE,1);
+        caland.set(Calendar.HOUR_OF_DAY,01);
+        caland.set(Calendar.MINUTE,20);
         caland.set(Calendar.SECOND,30);
         Intent intent = new Intent(MainActivity.this, ApiRequest.class);
-        PendingIntent pending = PendingIntent.getBroadcast(getApplicationContext(),100,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pending = PendingIntent.getBroadcast(getApplicationContext(),100,intent,PendingIntent.FLAG_ONE_SHOT);
         AlarmManager alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,caland.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pending);
 
-//Calendar sleepclander = Calendar.getInstance();
-//sleepclander.set(Calendar.HOUR_OF_DAY,24);
-//sleepclander.set(Calendar.MINUTE,0);
-//sleepclander.set(Calendar.SECOND,30);
- //Intent sleepintent = new Intent(MainActivity.this, sleepnotification.class);
-//PendingIntent pendsleep = PendingIntent.getBroadcast(getApplicationContext(),20,sleepintent,PendingIntent.FLAG_UPDATE_CURRENT);
-        //alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,sleepclander.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendsleep);
-//sleepintent.putExtra("sleepazker","اذكار النوم");
 
 
     }
