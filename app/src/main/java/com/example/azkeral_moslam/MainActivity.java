@@ -33,7 +33,7 @@ private final int Splash_Display_Length=1000;
          }
      },Splash_Display_Length);
 
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.pray.zone/v2/times/")
+       /* Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.pray.zone/v2/times/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         ArrayList<String>  times = new ArrayList<>();
         Interfaceretriofit intrface = retrofit.create(Interfaceretriofit.class);
@@ -55,17 +55,17 @@ private final int Splash_Display_Length=1000;
               Log.d("ERROR","the request bad");
 
           }
-      });
+      });*/
 
-       /*Calendar caland= Calendar.getInstance();
-       caland.set(Calendar.HOUR_OF_DAY,10);
-         caland.set(Calendar.MINUTE,32);
+       Calendar caland= Calendar.getInstance();
+       caland.set(Calendar.HOUR_OF_DAY,23);
+         caland.set(Calendar.MINUTE,25);
         caland.set(Calendar.SECOND,0);
         caland.set(Calendar.MILLISECOND,0);
-        Intent intent = new Intent(MainActivity.this, fakecalnder.class);
+        Intent intent = new Intent(MainActivity.this, ApiRequest.class);
         PendingIntent pending = PendingIntent.getBroadcast(getApplicationContext(),0,intent,0);
         AlarmManager alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,caland.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pending);*/
+        alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,caland.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pending);
 
 
 

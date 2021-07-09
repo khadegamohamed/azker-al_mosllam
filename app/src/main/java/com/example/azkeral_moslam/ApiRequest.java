@@ -24,7 +24,7 @@ public class ApiRequest extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-      /* Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.pray.zone/v2/times/")
+      Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.pray.zone/v2/times/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         ArrayList<String>  times = new ArrayList<>();
         Interfaceretriofit intrface = retrofit.create(Interfaceretriofit.class);
@@ -38,6 +38,8 @@ public class ApiRequest extends BroadcastReceiver {
                 times.add(response.body().getMaghrib());
                 times.add(response.body().getIsha());
                 Log.d("Request","the request good");
+                Log.d("RE","THE GOOD");
+
                 //Alarm manger
                 AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
                //fajer
@@ -130,7 +132,7 @@ public class ApiRequest extends BroadcastReceiver {
             public void onFailure(Call<Times> call, Throwable t) {
                 Log.d("ERROR","ERROR");
             }
-        });*/
+        });
 
 
 

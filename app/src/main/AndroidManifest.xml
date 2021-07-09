@@ -27,11 +27,31 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".AzkerMorningandnight"></receiver>
-        <receiver android:name=".sleepnotification"></receiver>
-        <receiver android:name=".AzanNotification"></receiver>
-        <receiver android:name=".ApiRequest"></receiver>
-        <receiver android:name=".fakecalnder"></receiver>
+        <receiver android:name=".AzkerMorningandnight">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".sleepnotification">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".AzanNotification">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".ApiRequest">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".fakecalnder">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
