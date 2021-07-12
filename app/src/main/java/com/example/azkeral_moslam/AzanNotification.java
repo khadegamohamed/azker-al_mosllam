@@ -24,7 +24,7 @@ public class AzanNotification extends BroadcastReceiver {
         String title= intent.getStringExtra("pray name");
         Intent intentt = new Intent(context,homeactivity.class);
         intentt.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pending = PendingIntent.getBroadcast(context,15,intentt, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pending = PendingIntent.getActivity(context,15,intentt, PendingIntent.FLAG_ONE_SHOT);
         NotificationCompat.Builder build = new NotificationCompat.Builder(context,channel_1)
                 .setContentIntent(pending)
                 .setSmallIcon(R.drawable.ic_baseline_bedtime_24)

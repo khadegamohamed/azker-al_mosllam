@@ -30,7 +30,7 @@ private MaterialTimePicker timepicker;
         selectalarm = findViewById(R.id.selectalarm);
         setalarm=findViewById(R.id.setalarm);
         cancelalarm = findViewById(R.id.cancelalarm);
-texttime = findViewById(R.id.texttime);
+                texttime = findViewById(R.id.texttime);
         selectalarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +89,7 @@ texttime = findViewById(R.id.texttime);
     private void setalarm(){
          alarmmanger= (AlarmManager) getSystemService(ALARM_SERVICE);
         Intent intentsleep = new Intent(sleeptimer.this ,sleepnotification.class);
-        PendingIntent pendslaap= PendingIntent.getBroadcast(getApplicationContext(),90,intentsleep,PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendslaap= PendingIntent.getBroadcast(getApplicationContext(),99,intentsleep,PendingIntent.FLAG_ONE_SHOT);
         alarmmanger.setInexactRepeating(AlarmManager.RTC_WAKEUP,calandersleep.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendslaap);
         Toast.makeText(this,"Alarm set Successfuly",Toast.LENGTH_LONG).show();
     }

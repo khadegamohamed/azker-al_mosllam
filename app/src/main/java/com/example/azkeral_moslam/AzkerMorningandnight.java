@@ -21,7 +21,7 @@ public class AzkerMorningandnight extends BroadcastReceiver {
         String title= intent.getStringExtra("title");
         Intent intennn = new Intent(context,homeactivity.class);
         intennn.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pending = PendingIntent.getBroadcast(context,20,intennn,PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pending = PendingIntent.getActivity(context,20,intennn,PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder build = new NotificationCompat.Builder(context,channel_1)
                 .setContentIntent(pending)
                 .setSmallIcon(R.drawable.ic_baseline_bedtime_24)

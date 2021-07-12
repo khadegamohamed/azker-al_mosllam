@@ -3,7 +3,7 @@ package com.example.azkeral_moslam;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Example {
+public class TimeResponse {
 
     @SerializedName("code")
     @Expose
