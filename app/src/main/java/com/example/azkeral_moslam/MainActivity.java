@@ -36,16 +36,15 @@ private final int Splash_Display_Length=1000;
      },Splash_Display_Length);
 
 
-
+sheredprefrence sssp = new sheredprefrence(getApplicationContext());
        Calendar caland= Calendar.getInstance();
-       //Calendar now = Calendar.getInstance();
-       caland.set(Calendar.HOUR_OF_DAY,1);
-         caland.set(Calendar.MINUTE,5);
+       caland.set(Calendar.HOUR_OF_DAY,8);
+         caland.set(Calendar.MINUTE,6);
         caland.set(Calendar.SECOND,0);
         caland.set(Calendar.MILLISECOND,0);
-      // if(caland.getTime().compareTo(new Date())<0){
-      // caland.add(Calendar.DAY_OF_MONTH,1);
-      //  }
+        if(caland.getTime().compareTo(new Date())<0){
+      caland.add(Calendar.DAY_OF_MONTH,1);
+     }
         Intent intent = new Intent(MainActivity.this, ApiRequest.class);
         PendingIntent pending = PendingIntent.getBroadcast(getApplicationContext(),0,intent,0);
        intent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
@@ -55,14 +54,11 @@ private final int Splash_Display_Length=1000;
      if (alarm != null) {
       alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,caland.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pending);
      }
-        Log.d("kk", ApiRequest.times.get(0));
-        Log.d("kk", ApiRequest.times.get(1));
-        Log.d("kk", ApiRequest.times.get(2));
-        Log.d("kk", ApiRequest.times.get(3));
-    ApiRequest.getttInstance();
+
         //fajer
     // Calendar nowf = Calendar.getInstance();
-        String[] fajerspilt= ApiRequest.fjer.split(":");
+/*String ff = sssp.getFager();
+        String[] fajerspilt= ff.split(":");
         int hourf = Integer.parseInt(fajerspilt[0]);
         int minf = Integer.parseInt(fajerspilt[1]);
         Log.d("FAJER", fajerspilt[0]);
@@ -101,12 +97,13 @@ private final int Splash_Display_Length=1000;
      morningazker.setData((Uri.parse("custom://"+System.currentTimeMillis())));
         PendingIntent intentmorning = PendingIntent.getBroadcast(getApplicationContext(),3,morningazker,PendingIntent.FLAG_UPDATE_CURRENT);
         morningazker.putExtra("title","اذكار الصباح");
-     //   alarm.cancel(intentmorning);
+       alarm.cancel(intentmorning);
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,moring.getTimeInMillis(),AlarmManager.INTERVAL_DAY,intentmorning);
 
 
         //dhur
-        String duherspilt[] = ApiRequest.dhur.split(":");
+        String dd  = sssp.getDhur();
+        String duherspilt[] = dd.split(":");
         int hourd= Integer.parseInt(duherspilt[0]);
         int mind  = Integer.parseInt(duherspilt[1]);
         Calendar duher = Calendar.getInstance();
@@ -120,13 +117,13 @@ private final int Splash_Display_Length=1000;
         Log.d("hello","dhur");
         Intent dhuherintent  = new Intent(MainActivity.this, AzanNotification.class);
         PendingIntent dhuherpend  = PendingIntent.getBroadcast(getApplicationContext(),7,dhuherintent,PendingIntent.FLAG_UPDATE_CURRENT);
-    // dhuherintent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+     dhuherintent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
         dhuherintent.putExtra("pray name","اذان الظهر ");
-       // alarm.cancel(dhuherpend);
+        alarm.cancel(dhuherpend);
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,duher.getTimeInMillis(),AlarmManager.INTERVAL_DAY,dhuherpend);
 //Asr
-
-     String asrspilt[] = ApiRequest.asrrr.split(":");
+String aa = sssp.getAsr();
+     String asrspilt[] = aa.split(":");
         int houra = Integer.parseInt(asrspilt[0]);
         int mina = Integer.parseInt(asrspilt[1]);
         Calendar asrr = Calendar.getInstance();
@@ -140,13 +137,13 @@ private final int Splash_Display_Length=1000;
         Log.d("hello","aasr");
         Intent aserintent  = new Intent(MainActivity.this, AzanNotification.class);
         PendingIntent aserpend  = PendingIntent.getBroadcast(getApplicationContext(),6,aserintent,PendingIntent.FLAG_UPDATE_CURRENT);
-    // aserintent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+     aserintent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
         aserintent.putExtra("pray name","اذان العصر ");
-       // alarm.cancel(aserpend);
+        alarm.cancel(aserpend);
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,asrr.getTimeInMillis(),AlarmManager.INTERVAL_DAY,aserpend);
         //maghribb
-
-        String maghribb[] = ApiRequest.Maghred.split(":");
+String maghred = sssp.getMghred();
+        String maghribb[] = maghred.split(":");
         int hourm = Integer.parseInt(maghribb[0]);
         int minm = Integer.parseInt(maghribb[1]);
         Calendar magh = Calendar.getInstance();
@@ -160,13 +157,13 @@ private final int Splash_Display_Length=1000;
         Log.d("hello","maghred");
         Intent maghribintent  = new Intent(MainActivity.this, AzanNotification.class);
         PendingIntent maghribpend  = PendingIntent.getBroadcast(getApplicationContext(),8,maghribintent,PendingIntent.FLAG_UPDATE_CURRENT);
-    // maghribintent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+     maghribintent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
         maghribintent.putExtra("pray name","اذان المغرب ");
-       // alarm.cancel(maghribpend);
+        alarm.cancel(maghribpend);
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,magh.getTimeInMillis(),AlarmManager.INTERVAL_DAY,maghribpend);
         //isha
-
-        String ishaspilit[] = ApiRequest.ishaaaa.split(":");
+String ii = sssp.getIshaa();
+        String ishaspilit[] = ii.split(":");
         int hourh = Integer.parseInt(ishaspilit[0]);
         int minh = Integer.parseInt(ishaspilit[1]);
         Calendar ishaa = Calendar.getInstance();
@@ -180,9 +177,9 @@ private final int Splash_Display_Length=1000;
         Log.d("hello","ishaaa");
         Intent ishaintent  = new Intent(MainActivity.this, AzanNotification.class);
         PendingIntent ishapend  = PendingIntent.getBroadcast(getApplicationContext(),9,ishaintent,PendingIntent.FLAG_UPDATE_CURRENT);
-    // ishaintent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+     ishaintent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
         ishaintent.putExtra("pray name","اذان العشاء ");
-     //   alarm.cancel(ishapend);
+      alarm.cancel(ishapend);
         alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,ishaa.getTimeInMillis(),AlarmManager.INTERVAL_DAY,ishapend);
 
         //nightazker
@@ -200,9 +197,9 @@ private final int Splash_Display_Length=1000;
         Intent nightazker = new Intent(MainActivity.this, AzkerMorningandnight.class);
         nightazker.putExtra("title","اذكار المساء");
         PendingIntent intentnight = PendingIntent.getBroadcast(getApplicationContext(),4,nightazker,PendingIntent.FLAG_UPDATE_CURRENT);
-    // nightazker.setData((Uri.parse("custom://"+System.currentTimeMillis())));
-    // alarm.cancel(intentnight);
-        alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,night.getTimeInMillis(),AlarmManager.INTERVAL_DAY,intentnight);
+     nightazker.setData((Uri.parse("custom://"+System.currentTimeMillis())));
+     alarm.cancel(intentnight);
+        alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,night.getTimeInMillis(),AlarmManager.INTERVAL_DAY,intentnight);*/
 
     }
 }
