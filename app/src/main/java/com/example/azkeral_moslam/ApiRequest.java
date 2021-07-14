@@ -33,13 +33,6 @@ public static String fjer;
 public static String asrrr;
 public static  String Maghred;
    public static ArrayList<String>  times ;
-   private ApiRequest(){};
-   public static ApiRequest getttInstance(){
-       if(instance == null){
-           instance = new ApiRequest();
-       }
-       return (instance);
-   }
 
 
     @Override

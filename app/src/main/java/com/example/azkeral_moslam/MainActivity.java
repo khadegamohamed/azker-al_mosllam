@@ -38,14 +38,15 @@ private final int Splash_Display_Length=1000;
 
 sheredprefrence sssp = new sheredprefrence(getApplicationContext());
        Calendar caland= Calendar.getInstance();
-       caland.set(Calendar.HOUR_OF_DAY,8);
-         caland.set(Calendar.MINUTE,17);
+       caland.set(Calendar.HOUR_OF_DAY,10);
+         caland.set(Calendar.MINUTE,57);
         caland.set(Calendar.SECOND,0);
         caland.set(Calendar.MILLISECOND,0);
-        if(caland.getTime().compareTo(new Date())<0){
-      caland.add(Calendar.DAY_OF_MONTH,1);
-     }
+      if(caland.getTime().compareTo(new Date())<0){
+     caland.add(Calendar.DAY_OF_MONTH,1);
+    }
         Intent intent = new Intent(MainActivity.this, ApiRequest.class);
+
         PendingIntent pending = PendingIntent.getBroadcast(getApplicationContext(),0,intent,0);
        intent.setData((Uri.parse("custom://"+System.currentTimeMillis())));
 
@@ -57,7 +58,7 @@ sheredprefrence sssp = new sheredprefrence(getApplicationContext());
 
         //fajer
     // Calendar nowf = Calendar.getInstance();
-/*String ff = sssp.getFager();
+String ff = sssp.getFager();
         String[] fajerspilt= ff.split(":");
         int hourf = Integer.parseInt(fajerspilt[0]);
         int minf = Integer.parseInt(fajerspilt[1]);
@@ -65,9 +66,7 @@ sheredprefrence sssp = new sheredprefrence(getApplicationContext());
         Log.d("FAJER", fajerspilt[1]);
         int minmoring = minf+20;
         int hourmoring = hourf;
-        if(minmoring>=60){
-            hourmoring  = hourmoring+1;
-        }
+
         Calendar fajer = Calendar.getInstance();
         fajer.set(Calendar.HOUR_OF_DAY,hourf);
         fajer.set(Calendar.MINUTE,minf);
@@ -199,7 +198,7 @@ String ii = sssp.getIshaa();
         PendingIntent intentnight = PendingIntent.getBroadcast(getApplicationContext(),4,nightazker,PendingIntent.FLAG_UPDATE_CURRENT);
      nightazker.setData((Uri.parse("custom://"+System.currentTimeMillis())));
      alarm.cancel(intentnight);
-        alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,night.getTimeInMillis(),AlarmManager.INTERVAL_DAY,intentnight);*/
+        alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,night.getTimeInMillis(),AlarmManager.INTERVAL_DAY,intentnight);
 
     }
 }
