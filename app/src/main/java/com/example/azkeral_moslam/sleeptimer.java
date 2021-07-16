@@ -41,12 +41,7 @@ private MaterialTimePicker timepicker;
 
         });
 
-        setalarm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setalarm();
-            }
-        });
+
 
         cancelalarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +52,6 @@ private MaterialTimePicker timepicker;
 
     }
     private void showtimepicker() {
-
         timepicker = new MaterialTimePicker.Builder()
                 .setTimeFormat(TimeFormat.CLOCK_12H)
                 .setHour(12)
@@ -78,7 +72,11 @@ private MaterialTimePicker timepicker;
                 calandersleep.set(Calendar.MINUTE,timepicker.getMinute());
                 calandersleep.set(Calendar.SECOND,0);
                 calandersleep.set(Calendar.MILLISECOND,0);
-
+                alarmmanger= (AlarmManager) getSystemService(ALARM_SERVICE);
+                Intent intentsleep = new Intent(sleeptimer.this ,sleepnotification.class);
+                PendingIntent pendslaap= PendingIntent.getBroadcast(getApplicationContext(),99,intentsleep,PendingIntent.FLAG_ONE_SHOT);
+                alarmmanger.setInexactRepeating(AlarmManager.RTC_WAKEUP,calandersleep.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendslaap);
+              //Toast.makeText(this,"Alarm set",Toast.LENGTH_LONG).show();
 
 
             }
@@ -86,13 +84,7 @@ private MaterialTimePicker timepicker;
 
     }
 
-    private void setalarm(){
-         alarmmanger= (AlarmManager) getSystemService(ALARM_SERVICE);
-        Intent intentsleep = new Intent(sleeptimer.this ,sleepnotification.class);
-        PendingIntent pendslaap= PendingIntent.getBroadcast(getApplicationContext(),99,intentsleep,PendingIntent.FLAG_ONE_SHOT);
-        alarmmanger.setInexactRepeating(AlarmManager.RTC_WAKEUP,calandersleep.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendslaap);
-        Toast.makeText(this,"Alarm set Successfuly",Toast.LENGTH_LONG).show();
-    }
+
     private void cancelalarm(){
         Intent intentsleep = new Intent(sleeptimer.this ,sleepnotification.class);
         PendingIntent pendslaap= PendingIntent.getBroadcast(getApplicationContext(),90,intentsleep,PendingIntent.FLAG_ONE_SHOT);

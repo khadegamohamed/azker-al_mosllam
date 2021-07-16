@@ -38,8 +38,8 @@ private final int Splash_Display_Length=1000;
 
 sheredprefrence sssp = new sheredprefrence(getApplicationContext());
        Calendar caland= Calendar.getInstance();
-       caland.set(Calendar.HOUR_OF_DAY,10);
-         caland.set(Calendar.MINUTE,57);
+       caland.set(Calendar.HOUR_OF_DAY,20);
+         caland.set(Calendar.MINUTE,14);
         caland.set(Calendar.SECOND,0);
         caland.set(Calendar.MILLISECOND,0);
       if(caland.getTime().compareTo(new Date())<0){
