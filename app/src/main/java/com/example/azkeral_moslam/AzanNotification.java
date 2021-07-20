@@ -23,6 +23,7 @@ public class AzanNotification extends BroadcastReceiver {
        Uri azezsound =Uri.parse("android.resource" + context.getApplicationContext()+"/" + R.raw.azan);
         String title= intent.getStringExtra("pray name");
         Intent intentt = new Intent(context,homeactivity.class);
+        context.startService(intentt);
         intentt.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pending = PendingIntent.getActivity(context,15,intentt, PendingIntent.FLAG_ONE_SHOT);
         NotificationCompat.Builder build = new NotificationCompat.Builder(context,channel_1)

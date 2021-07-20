@@ -26,7 +26,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiRequest extends BroadcastReceiver {
-    private static ApiRequest instance = null;
+
    public static String ishaaaa;
 public static  String  dhur;
 public static String fjer;
