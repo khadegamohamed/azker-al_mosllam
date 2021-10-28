@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -23,14 +24,17 @@ public class sleep extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sleep);
         rvv = findViewById(R.id.sleep);
-        sleeptimer = findViewById(R.id.sleeptimer);
+       /* sleeptimer = findViewById(R.id.sleeptimer);
+
         sleeptimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent sleeptimer = new Intent(sleep.this,sleeptimer.class);
+               Intent sleeptimer = new Intent(sleep.this,sleeptimer.class);
                 startActivity(sleeptimer);
+
+
             }
-        });
+        });*/
         ArrayList<imageazker> listimage = new ArrayList<>();
         ArrayList<String> listazker = new ArrayList<>();
         listimage.add(new imageazker(R.drawable.almolk, "قراءه سوره الملك "));

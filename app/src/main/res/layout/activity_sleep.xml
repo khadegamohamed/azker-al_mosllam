@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+
     tools:context=".sleep">
-    <Button
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/sleeptimer"
-        android:text="Sleep Timer"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:text="اذكار قبل النوم"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:id="@+id/sleeptext"
+        android:background="@color/black"
         />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sleeptext"
         android:padding="8dp"
         android:id="@+id/sleep"
         />
-</LinearLayout>
+
+</RelativeLayout>

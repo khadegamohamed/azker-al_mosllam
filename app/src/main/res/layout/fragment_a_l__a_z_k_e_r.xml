@@ -5,32 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".homeactivity">
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="api"
-    android:id="@+id/buttonapi"
-    />
+    tools:context=".first">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/pray"
         android:src="@drawable/pray"
-      android:scaleType="centerCrop"
+        android:scaleType="centerCrop"
         android:layout_margin="10dp"
-    />
+        />
 
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-   android:layout_weight="1"
-    android:id="@+id/moring"
-    android:src="@drawable/moring"
-    android:scaleType="centerCrop"
-    android:layout_margin="10dp"
-    />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/moring"
+        android:src="@drawable/moring"
+        android:scaleType="centerCrop"
+        android:layout_margin="10dp"
+        />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"

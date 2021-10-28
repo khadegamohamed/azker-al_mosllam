@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/Fragment1"
+    android:title="مواقيت الصلاه"
+    android:icon="@drawable/ic_baseline_access_alarms_24"
+    />
+    <item
+        android:title="اذكار يوميه"
+        android:id="@+id/Fragment2"
+        android:icon="@drawable/ic_baseline_brightness_6_24"
+        />
+
+
+
+</menu>
